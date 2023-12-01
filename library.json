@@ -17,7 +17,7 @@
   "dependencies": [
     {
       "name": "external-repo",
-      "version": "https://github.com/scuba-hacker.git#2.5.33.1"
+      "version": "https://github.com/scuba-hacker/TFT_eSPI.git#2.5.33.1"
     }
   ]
 }
