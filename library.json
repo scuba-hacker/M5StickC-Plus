@@ -16,10 +16,8 @@
   "headers": "M5StickCPlus.h",
   "dependencies": [
     {
-      "owner": "scuba-hacker",
-      "name": "TFT_eSPI",
-      "version": "v2.5.33.1",
-      "platforms": "espressif32"
+      "name": "external-repo",
+      "version": "https://github.com/scuba-hacker.git#2.5.33.1"
     }
   ]
 }
