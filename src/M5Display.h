@@ -4,10 +4,11 @@
 #include <Arduino.h>
 #include <FS.h>
 #include <SPI.h>
-#include "utility/In_eSPI.h"
-#include "utility/Sprite.h"
-#include "Fonts/HZK16.h"
-#include "Fonts/ASC16.h"
+#include <Fonts/HZK16.h>
+#include <Fonts/ASC16.h>
+
+#include <TFT_eSPI.h>
+
 
 typedef enum {
     JPEG_DIV_NONE,

@@ -5,9 +5,10 @@ M5Display::M5Display() : TFT_eSPI() {
     hzk16Type = DontUsedHzk16;
 }
 
-void M5Display::begin() {
-    TFT_eSPI::begin();
-    fillScreen(0);
+void M5Display::begin()
+{
+  init();
+  fillScreen(TFT_BLACK);
 }
 
 void M5Display::drawBitmap(int16_t x0, int16_t y0, int16_t w, int16_t h,
@@ -435,12 +436,12 @@ void M5Display::progressBar(int x, int y, int w, int h, uint8_t val) {
 
 #include "utility/qrcode.h"
 void M5Display::qrcode(const char *string, uint16_t x, uint16_t y, uint8_t width, uint8_t version) {
-  
+
   // Create the QR code
   QRCode qrcode;
   uint8_t qrcodeData[qrcode_getBufferSize(version)];
   qrcode_initText(&qrcode, qrcodeData, version, 0, string);
-  
+
   // Top quiet zone
   uint8_t thickness = width / qrcode.size;
   uint16_t lineLength = qrcode.size * thickness;
@@ -485,7 +486,7 @@ uint32_t read32(fs::File &f) {
 
 // Bodmers BMP image rendering function
 void M5Display::drawBmpFile(fs::FS &fs, const char *path, uint16_t x, uint16_t y) {
-    
+
   if ((x >= width()) || (y >= height())) return;
 
   // Open requested file on SD card
