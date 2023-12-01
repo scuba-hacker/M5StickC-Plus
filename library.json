@@ -18,7 +18,7 @@
     {
       "owner": "scuba-hacker",
       "name": "TFT_eSPI",
-      "version": "^v2.5.33.1",
+      "version": "v2.5.33.1",
       "platforms": "espressif32"
     }
   ]
