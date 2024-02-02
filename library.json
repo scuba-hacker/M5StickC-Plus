@@ -17,7 +17,7 @@
   "dependencies": [
     {
       "name": "TFT_eSPI",
-      "version": "https://github.com/scuba-hacker/TFT_eSPI.git#v2.5.33.1"
+      "version": "https://github.com/scuba-hacker/TFT_eSPI.git#PushImageScaled"
     }
   ]
 }
