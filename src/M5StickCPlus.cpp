@@ -5,9 +5,12 @@
 #include "M5StickCPlus.h"
 
 M5StickCPlus::M5StickCPlus() : isInited(0) {
+    buzzerEnabled = false;
 }
 
-void M5StickCPlus::begin(bool LCDEnable, bool PowerEnable, bool SerialEnable) {
+void M5StickCPlus::begin(bool LCDEnable, bool PowerEnable, bool SerialEnable, bool buzzerEnable) {
+    buzzerEnabled = buzzerEnable;
+
     //! Correct init once
     if (isInited)
         return;
@@ -36,7 +39,9 @@ void M5StickCPlus::begin(bool LCDEnable, bool PowerEnable, bool SerialEnable) {
         Serial.println("OK");
     }
 
-    Beep.begin();
+    if (buzzerEnabled) {
+        Beep.begin();
+    }
 
     Rtc.begin();
 }
@@ -44,7 +49,9 @@ void M5StickCPlus::begin(bool LCDEnable, bool PowerEnable, bool SerialEnable) {
 void M5StickCPlus::update() {
     M5.BtnA.read();
     M5.BtnB.read();
-    M5.Beep.update();
+    if (buzzerEnabled) {
+        M5.Beep.update();
+    }
 }
 
 M5StickCPlus M5;

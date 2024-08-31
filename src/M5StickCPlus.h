@@ -86,7 +86,7 @@ class M5StickCPlus {
    public:
     M5StickCPlus();
     void begin(bool LCDEnable = true, bool PowerEnable = true,
-               bool SerialEnable = true);
+               bool SerialEnable = true, bool buzzerEnable = true);
     void update();
 
     //! LCD
@@ -105,6 +105,7 @@ class M5StickCPlus {
 
    private:
     bool isInited;
+    bool buzzerEnabled;
     // uint8_t _wakeupPin;
 };
 
