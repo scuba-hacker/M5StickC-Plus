@@ -352,6 +352,7 @@ void M5Display::writeHzkGbk(const char *c) {
 
 void M5Display::setTextWrap(boolean w) {
     textwrap = w;
+    textwrapX = w;
 }
 
 #include "utility/qrcode.h"
