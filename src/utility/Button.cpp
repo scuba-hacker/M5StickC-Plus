@@ -45,6 +45,18 @@ Button::Button(uint8_t pin, uint8_t invert, uint32_t dbTime) {
     _pressTime  = _time;
 }
 
+void Button::reset()
+{
+    _state = digitalRead(_pin);
+    _time       = millis();
+    _lastState  = _state;
+    _changed    = 0;
+    _hold_time  = -1;
+    _lastTime   = _time;
+    _lastChange = _time;
+    _pressTime  = _time;
+}
+
 /*----------------------------------------------------------------------*
  * read() returns the state of the button, 1==pressed, 0==released,     *
  * does debouncing, captures and maintains times, previous states, etc. *
